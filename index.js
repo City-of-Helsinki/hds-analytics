@@ -51,6 +51,13 @@ async function analyze() {
     return await scanner.run(scannerConfig, '', 'programmatic');
 }
 
+const getHdsComponentsList = () => {
+    const hdsDirectory = fs.readdirSync(tempDirectory).find((dir) => dir.includes('helsinki-design-system'));
+    const hdsFileContent = fs.readFileSync(`${tempDirectory}/${hdsDirectory}/packages/react/src/components/index.ts`, 'utf8');
+
+    return hdsFileContent.match(/'(\.\/[a-zA-Z0-9-]+)';/g).map((component) => component.slice(3, -2));
+}
+
 axios.defaults.headers.common['Authorization'] = `token ${GITHUB_TOKEN}`;
 axiosThrottle.use(axios, { requestsPerSecond: 3 });
 
@@ -64,7 +71,8 @@ const reposWithHdsData = searchData?.data?.items
     .filter((item, index) =>
         // remove duplicates
         searchData.data.items.findIndex((i) => i.repository.full_name === item.repository.full_name) === index &&
-        item.repository.name !== 'helsinki-design-system' &&
+        // remove helsinki-design-system and hds- projects (for now don't remove since we need the info of non-used components too)
+        // item.repository.name !== 'helsinki-design-system' &&
         !item.repository.name.includes('hds-')
     )
     .map((item) => {
@@ -89,6 +97,7 @@ reposWithHdsData.forEach((repo) => {
 
 const zipUrls = reposWithHdsData.map((repoItem) => `${githubApiUrl}/repos/${repoItem.full_name}/zipball`);
 
+/*
 console.log('downloading zips');
 await downloadFiles(zipUrls, tempDirectory);
 console.log('downloading zips done');
@@ -96,6 +105,7 @@ console.log('downloading zips done');
 console.log('start unzipping zips');
 await unzipAllInDirectory(tempDirectory);
 console.log('unzipping done');
+*/
 
 console.log('parsing used package versions from repos');
 const packageVersions = getPackageVersions(`${tempDirectory}`, owner, packageVersionsToCheck);
@@ -109,10 +119,20 @@ reposWithHdsData.forEach((repo) => {
     repo.differentComponentsInUse = 0;
 });
 
+console.log('scan helsinki-design-system components');
+const hdsComponents = getHdsComponentsList();
+const nonUsedComponents = [...hdsComponents];
+
 // now scan for the components usage
 console.log('Running component usage analysis...');
 const analysis = await analyze();
 Object.entries(analysis).forEach(([componentName, componentData]) => {
+    // remove component from nonUsedComponents, check case insensitively
+    const index = nonUsedComponents.findIndex((comp) => comp.toLowerCase() === componentName.toLowerCase());
+    if (index > -1) {
+        nonUsedComponents.splice(index, 1);
+    }
+
     componentData.instances.forEach((instance) => {
         // replace all \ with / to make it work on windows too
         const location = instance.location.file.replace(/\\/g, '/');
@@ -137,6 +157,8 @@ Object.entries(analysis).forEach(([componentName, componentData]) => {
     });
 });
 
+console.log('non used components:', nonUsedComponents);
+
 // sort
 reposWithHdsData.sort((a, b) => b.differentComponentsInUse - a.differentComponentsInUse);
 
@@ -149,4 +171,4 @@ fs.writeFile(`${resultsDir}/${now}-by-repository.json`, JSON.stringify(reposWith
 });
 
 console.log('clear temporary directory');
-fsExtra.emptyDirSync(tempDirectory);
+// fsExtra.emptyDirSync(tempDirectory);
