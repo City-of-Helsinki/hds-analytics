@@ -51,7 +51,7 @@ async function analyze() {
     return await scanner.run(scannerConfig, '', 'programmatic');
 }
 
-const getHdsComponentsList = () => {
+async function getHdsComponentsList() {
     const hdsDirectory = fs.readdirSync(tempDirectory).find((dir) => dir.includes('helsinki-design-system'));
     const hdsFileContent = fs.readFileSync(`${tempDirectory}/${hdsDirectory}/packages/react/src/components/index.ts`, 'utf8');
     const topLevelExports = hdsFileContent.match(/'(\.\/[a-zA-Z0-9-]+)';/g).map((component) => component.slice(3, -2));
@@ -65,6 +65,12 @@ const getHdsComponentsList = () => {
         }
     }
     );
+
+    console.log('remove helsinki-design-system folder');
+    // we need to remove the helsinki-design-system folder now not to scan it later
+    await fsExtra.removeSync(`${tempDirectory}/${hdsDirectory}`);
+    console.log('helsinki-design-system folder removed');
+
     return components;
 }
 
@@ -128,7 +134,7 @@ reposWithHdsData.forEach((repo) => {
 });
 
 console.log('scan helsinki-design-system components');
-const hdsComponents = getHdsComponentsList();
+const hdsComponents = await getHdsComponentsList();
 let nonUsedComponents = [...hdsComponents];
 console.log('hds components scanned');
 
@@ -181,4 +187,4 @@ fs.writeFile(`${resultsDir}/${now}-by-repository.json`, JSON.stringify(reposWith
 });
 
 console.log('clear temporary directory');
-// fsExtra.emptyDirSync(tempDirectory);
+fsExtra.emptyDirSync(tempDirectory);
