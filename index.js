@@ -54,8 +54,18 @@ async function analyze() {
 const getHdsComponentsList = () => {
     const hdsDirectory = fs.readdirSync(tempDirectory).find((dir) => dir.includes('helsinki-design-system'));
     const hdsFileContent = fs.readFileSync(`${tempDirectory}/${hdsDirectory}/packages/react/src/components/index.ts`, 'utf8');
-
-    return hdsFileContent.match(/'(\.\/[a-zA-Z0-9-]+)';/g).map((component) => component.slice(3, -2));
+    const topLevelExports = hdsFileContent.match(/'(\.\/[a-zA-Z0-9-]+)';/g).map((component) => component.slice(3, -2));
+    // then get all components from the files
+    const components = [];
+    topLevelExports.forEach((component) => {
+        const componentFileContent = fs.readFileSync(`${tempDirectory}/${hdsDirectory}/packages/react/src/components/${component}/index.ts`, 'utf8');
+        const subComponents = [...new Set(componentFileContent.match(/\b[A-Z][a-zA-Z0-9-]+\b/g))];
+        if (subComponents) {
+            components.push(...subComponents);
+        }
+    }
+    );
+    return components;
 }
 
 axios.defaults.headers.common['Authorization'] = `token ${GITHUB_TOKEN}`;
@@ -97,7 +107,6 @@ reposWithHdsData.forEach((repo) => {
 
 const zipUrls = reposWithHdsData.map((repoItem) => `${githubApiUrl}/repos/${repoItem.full_name}/zipball`);
 
-/*
 console.log('downloading zips');
 await downloadFiles(zipUrls, tempDirectory);
 console.log('downloading zips done');
@@ -105,7 +114,6 @@ console.log('downloading zips done');
 console.log('start unzipping zips');
 await unzipAllInDirectory(tempDirectory);
 console.log('unzipping done');
-*/
 
 console.log('parsing used package versions from repos');
 const packageVersions = getPackageVersions(`${tempDirectory}`, owner, packageVersionsToCheck);
@@ -121,13 +129,15 @@ reposWithHdsData.forEach((repo) => {
 
 console.log('scan helsinki-design-system components');
 const hdsComponents = getHdsComponentsList();
-const nonUsedComponents = [...hdsComponents];
+let nonUsedComponents = [...hdsComponents];
+console.log('hds components scanned');
 
 // now scan for the components usage
 console.log('Running component usage analysis...');
 const analysis = await analyze();
 Object.entries(analysis).forEach(([componentName, componentData]) => {
     // remove component from nonUsedComponents, check case insensitively
+    console.log(componentName, nonUsedComponents.findIndex((comp) => comp.toLowerCase() === componentName.toLowerCase()));
     const index = nonUsedComponents.findIndex((comp) => comp.toLowerCase() === componentName.toLowerCase());
     if (index > -1) {
         nonUsedComponents.splice(index, 1);
