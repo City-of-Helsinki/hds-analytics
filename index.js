@@ -175,7 +175,7 @@ Object.entries(analysis).forEach(([componentName, componentData]) => {
 
 console.log('non used components:', nonUsedComponents);
 
-// put nonUsedComponents to reposWithHdsDatas 'helsinki-design-system' key
+// put nonUsedComponents to reposWithHdsDatas 'helsinki-design-system'
 reposWithHdsData.find((repo) => repo.full_name.split('/')[1] === 'helsinki-design-system').nonUsedComponents = nonUsedComponents;
 
 // sort
