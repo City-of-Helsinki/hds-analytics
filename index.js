@@ -87,7 +87,7 @@ async function getHdsComponentsList() {
 }
 
 axios.defaults.headers.common['Authorization'] = `token ${GITHUB_TOKEN}`;
-axiosThrottle.use(axios, { requestsPerSecond: 3 });
+axiosThrottle.use(axios, { requestsPerSecond: 1 });
 
 console.log('fetching repos data which contain hds-react in package.json');
 const searchData = await axios.get(`${githubApiUrl}/search/code?q=hds-react+in:file+filename:package.json+org:${owner}&per_page=1000&page=1`);
