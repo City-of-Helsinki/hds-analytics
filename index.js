@@ -45,7 +45,7 @@ if (!fs.existsSync(tempDirectory)) {
 }
 
 console.log('clear temporary directory');
-fsExtra.emptyDirSync(tempDirectory);
+await fsExtra.emptyDirSync(tempDirectory);
 
 const scannerConfig = {
     crawlFrom: `${tempDirectory}`,
@@ -202,4 +202,4 @@ fs.writeFile(`${resultsDir}/${now}-by-repository.json`, JSON.stringify(reposWith
 });
 
 console.log('clear temporary directory');
-fsExtra.emptyDirSync(tempDirectory);
+await fsExtra.emptyDirSync(tempDirectory);
