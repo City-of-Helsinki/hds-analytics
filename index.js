@@ -44,6 +44,9 @@ if (!fs.existsSync(tempDirectory)) {
     fs.mkdirSync(tempDirectory);
 }
 
+console.log('clear temporary directory');
+fsExtra.emptyDirSync(tempDirectory);
+
 const scannerConfig = {
     crawlFrom: `${tempDirectory}`,
     importedFrom: 'hds-react',
