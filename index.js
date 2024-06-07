@@ -7,6 +7,15 @@ import { unzipAllInDirectory } from './unzipFiles.js';
 import fs from 'fs';
 import fsExtra from 'fs-extra/esm';
 
+const requiredNodeVersion = '20.12.2';
+
+// check nodejs version
+const nodeVersion = process.versions.node;
+if (nodeVersion !== requiredNodeVersion) {
+    console.error(`Node version should be ${requiredNodeVersion}, you have ${nodeVersion} in use, exiting...`);
+    process.exit();
+}
+
 // parse all command line given arguments which are separated by space and key=value pairs
 const commandLineArgs = process.argv.slice(2);
 const args = {};
