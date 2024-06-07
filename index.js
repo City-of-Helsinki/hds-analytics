@@ -194,12 +194,13 @@ reposWithHdsData.find((repo) => repo.full_name.split('/')[1] === 'helsinki-desig
 reposWithHdsData.sort((a, b) => b.differentComponentsInUse - a.differentComponentsInUse);
 
 // write reposWithHdsData to file
-fs.writeFile(`${resultsDir}/${now}-by-repository.json`, JSON.stringify(reposWithHdsData, null, 2), 'utf8', function (err) {
+fs.writeFileSync(`${resultsDir}/${now}-by-repository.json`, JSON.stringify(reposWithHdsData, null, 2), 'utf8', function (err) {
     if (err) {
         return console.log(err);
     }
-    console.log("The file was saved!");
 });
+
+console.log("Results written to files");
 
 console.log('clear temporary directory');
 await fsExtra.emptyDirSync(tempDirectory);
