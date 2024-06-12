@@ -1,34 +1,32 @@
-import axios from "axios";
-import fs from "fs";
+import { fetcher } from "./fetcher.js";
+import { Readable } from 'node:stream';
+import { writeFile } from 'node:fs/promises'
+import { ConcurrentPromiseQueue } from "concurrent-promise-queue";
+
+let downloads = 0;
+
+async function downloadFile(url, directory) {
+    const response = await fetcher(url);
+    const filename = response.headers.get('content-disposition').split('=')[1];
+    const body = Readable.fromWeb(response.body);
+    await writeFile(`${directory + '/' + filename}`, body);
+    downloads--;
+    console.log(`Downloaded ${filename}`);
+    console.log(`Downloads left: ${downloads}`);
+}
 
 export async function downloadFiles(urls, directory) {
-    const fileRequests = urls.map((url) => {
-        console.log(`preparing to download url: ${url}`);
-        return axios.get(url, { responseType: 'stream', timeout: 60000 });
+    const downloadsQueue = new ConcurrentPromiseQueue({
+        unitOfTimeMillis: 1000,
+        maxNumberOfConcurrentPromises: 1,
     });
 
-    console.log('start downloads');
-    const responses = await Promise.all(fileRequests);
+    downloads = urls.length;
+    console.log(`Start downloading ${downloads} files...`);
 
-    let downloaded = 0;
-    const pipes = responses.map((response) => {
-        const headerLine = response.headers['content-disposition'];
-        const filename = headerLine.split('=')[1];
-        response.data.pipe(fs.createWriteStream(`${directory + '/' + filename}`));
-        return new Promise((resolve, reject) => {
-            response.data.on('end', () => {
-                downloaded++;
-                console.log(`Downloaded ${downloaded} of ${urls.length} - ${filename}`);
-                resolve();
-            }).on('error', (err) => {
-                console.error('error', err);
-                reject(err);
-            });
-        });
+    const pipes = urls.map((url) => {
+        return () => downloadFile(url, directory);
     });
 
-    return Promise.all(pipes);
+    return Promise.all(pipes.map((pipe) => downloadsQueue.addPromise(pipe)));
 };
-
-
-

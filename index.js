@@ -1,11 +1,11 @@
-import axios from 'axios';
-import axiosThrottle from 'axios-request-throttle';
+import { ConcurrentPromiseQueue } from "concurrent-promise-queue";
 import { downloadFiles } from './downloadFiles.js';
-import scanner from "react-scanner";
+import { fetcher } from './fetcher.js';
 import { getPackageVersions } from './getPackageVersions.js';
 import { unzipAllInDirectory } from './unzipFiles.js';
 import fs from 'fs';
 import fsExtra from 'fs-extra/esm';
+import scanner from "react-scanner";
 
 const requiredNodeVersion = '20.12.2';
 
@@ -27,7 +27,7 @@ commandLineArgs.forEach(arg => {
 const owner = 'City-of-Helsinki';
 const currentDir = process.cwd();
 const tempDirectory = `${currentDir}/tmp`;
-const GITHUB_TOKEN = args.GITHUB_TOKEN || process.env.GITHUB_TOKEN;
+global.GITHUB_TOKEN = args.GITHUB_TOKEN || process.env.GITHUB_TOKEN;
 const githubApiUrl = 'https://api.github.com';
 const now = new Date().toJSON().slice(0, 10);
 const resultsDir = './results';
@@ -86,19 +86,15 @@ async function getHdsComponentsList() {
     return components;
 }
 
-axios.defaults.headers.common['Authorization'] = `token ${GITHUB_TOKEN}`;
-axiosThrottle.use(axios, { requestsPerSecond: 1 });
-
 console.log('fetching repos data which contain hds-react in package.json');
-const searchData = await axios.get(`${githubApiUrl}/search/code?q=hds-react+in:file+filename:package.json+org:${owner}&per_page=1000&page=1`);
-
-console.log('repos data fetched');
+const fetchData = await fetcher(`${githubApiUrl}/search/code?q=hds-react+in:file+filename:package.json+org:${owner}&per_page=1000&page=1`);
+const searchData = await fetchData.json();
 
 // remove duplicates from data and also if name is helsinki-design-system or includes hds- (test projects usually)
-const reposWithHdsData = searchData?.data?.items
+const reposWithHdsData = searchData?.items
     .filter((item, index) =>
         // remove duplicates
-        searchData.data.items.findIndex((i) => i.repository.full_name === item.repository.full_name) === index &&
+        searchData.items.findIndex((i) => i.repository.full_name === item.repository.full_name) === index &&
         // remove helsinki-design-system and hds- projects (for now don't remove since we need the info of non-used components too)
         // item.repository.name !== 'helsinki-design-system' &&
         !item.repository.name.includes('hds-')
@@ -109,17 +105,27 @@ const reposWithHdsData = searchData?.data?.items
 
 const allCommitsRequests = reposWithHdsData.map((repoItem) => {
     const [owner, repo] = repoItem.full_name.split('/');
-    return axios.get(`${githubApiUrl}/repos/${repoItem.full_name}/commits`, { owner, repo });
+    return () => fetcher(`${githubApiUrl}/repos/${repoItem.full_name}/commits`, { owner, repo });
 });
 
-console.log('fetching commits');
-const allReposCommitDatas = await Promise.all(allCommitsRequests);
+const commitsQueue = new ConcurrentPromiseQueue({
+    unitOfTimeMillis: 500,
+    maxNumberOfConcurrentPromises: 2
+});
+let allReposCommitDatas = [];
+try {
+    console.log('Fetching commits');
+    const allReposCommitsFetches = await Promise.all(allCommitsRequests.map((request) => commitsQueue.addPromise(request)));
+    allReposCommitDatas = await Promise.all(allReposCommitsFetches.map((data) => data.json()));
+} catch (error) {
+    console.error('Error fetching commits', error);
+}
 console.log('commits fetched');
 
 // get the last commit date
 reposWithHdsData.forEach((repo) => {
     // Check that the url contains the repo full_name in full (test by splitting with <repo-full_name>/ -> length should be 2)
-    const latestCommit = allReposCommitDatas.find((commitDatas) => commitDatas.data[0].url.split(`${repo.full_name}/`).length === 2)?.data[0].commit?.committer?.date;
+    const latestCommit = allReposCommitDatas.find((commitDatas) => commitDatas[0].url.split(`${repo.full_name}/`).length === 2)?.[0].commit?.committer?.date;
     repo.latestCommit = latestCommit;
 });
 
@@ -193,8 +199,21 @@ reposWithHdsData.find((repo) => repo.full_name.split('/')[1] === 'helsinki-desig
 // sort
 reposWithHdsData.sort((a, b) => b.differentComponentsInUse - a.differentComponentsInUse);
 
+
+// separate helsinki-design-system from the rest and write to own file
+const isHDSMainRepo = (repo)=> repo.full_name.split('/')[1] === 'helsinki-design-system';
+const hdsRepoData = reposWithHdsData.find(isHDSMainRepo);
+const clientReposData = reposWithHdsData.filter((repo) => !isHDSMainRepo(repo));
+
+// write hdsRepoData to file
+fs.writeFileSync(`${resultsDir}/${now}-helsinki-design-system.json`, JSON.stringify(hdsRepoData, null, 2), 'utf8', function (err) {
+    if (err) {
+        return console.log(err);
+    }
+});
+
 // write reposWithHdsData to file
-fs.writeFileSync(`${resultsDir}/${now}-by-repository.json`, JSON.stringify(reposWithHdsData, null, 2), 'utf8', function (err) {
+fs.writeFileSync(`${resultsDir}/${now}-by-repository.json`, JSON.stringify(clientReposData, null, 2), 'utf8', function (err) {
     if (err) {
         return console.log(err);
     }

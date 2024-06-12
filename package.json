@@ -10,8 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.8",
-    "axios-request-throttle": "^1.0.0",
+    "concurrent-promise-queue": "^1.0.3",
     "fs-extra": "^11.2.0",
     "react-scanner": "^1.1.0",
     "unzipper": "^0.11.5"
