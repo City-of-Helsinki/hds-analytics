@@ -2,6 +2,7 @@ import { ConcurrentPromiseQueue } from "concurrent-promise-queue";
 import { downloadFiles } from './downloadFiles.js';
 import { fetcher } from './fetcher.js';
 import { getPackageVersions } from './getPackageVersions.js';
+import { hdsScanner } from "./hdsScanner.js";
 import { unzipAllInDirectory } from './unzipFiles.js';
 import fs from 'fs';
 import fsExtra from 'fs-extra/esm';
@@ -31,7 +32,18 @@ global.GITHUB_TOKEN = args.GITHUB_TOKEN || process.env.GITHUB_TOKEN;
 const githubApiUrl = 'https://api.github.com';
 const now = new Date().toJSON().slice(0, 10);
 const resultsDir = './results';
-const packageVersionsToCheck = args.PACKAGES || ['hds-react', 'react', 'next', 'express', 'vite', 'gatsby', 'remix'];
+const packageVersionsToCheck = args.PACKAGES || [
+    'hds-react',
+    'hds-core',
+    'hds-design-tokens',
+    'hds-js',
+    'react',
+    'next',
+    'express',
+    'vite',
+    'gatsby',
+    'remix'
+];
 
 // if no GITHUB_TOKEN exists -> exit with error
 if (!GITHUB_TOKEN) {
@@ -86,8 +98,8 @@ async function getHdsComponentsList() {
     return components;
 }
 
-console.log('fetching repos data which contain hds-react in package.json');
-const fetchData = await fetcher(`${githubApiUrl}/search/code?q=hds-react+in:file+filename:package.json+org:${owner}&per_page=1000&page=1`);
+console.log('fetching repos data which contain hds- in package.json');
+const fetchData = await fetcher(`${githubApiUrl}/search/code?q=hds-+in:file+filename:package.json+org:${owner}&per_page=1000&page=1`);
 const searchData = await fetchData.json();
 
 // remove duplicates from data and also if name is helsinki-design-system or includes hds- (test projects usually)
@@ -157,7 +169,7 @@ let nonUsedComponents = [...hdsComponents];
 console.log('hds components scanned');
 
 // now scan for the components usage
-console.log('Running component usage analysis...');
+console.log('Running React component usage analysis...');
 const analysis = await analyze();
 Object.entries(analysis).forEach(([componentName, componentData]) => {
     // remove component from nonUsedComponents, check case insensitively
@@ -191,7 +203,17 @@ Object.entries(analysis).forEach(([componentName, componentData]) => {
     });
 });
 
-console.log('non used components:', nonUsedComponents);
+console.log('Run hds-core component analysis');
+const hdsScan = hdsScanner(tempDirectory);
+console.log('hds-core component analysis done');
+
+// append to data
+reposWithHdsData.forEach((repo) => {
+    const repoName = repo.full_name.split('/')[1];
+    if (hdsScan[repoName]) {
+        repo.deepScan = hdsScan[repoName];
+    }
+});
 
 // put nonUsedComponents to reposWithHdsDatas 'helsinki-design-system'
 reposWithHdsData.find((repo) => repo.full_name.split('/')[1] === 'helsinki-design-system').nonUsedComponents = nonUsedComponents;
@@ -201,7 +223,7 @@ reposWithHdsData.sort((a, b) => b.differentComponentsInUse - a.differentComponen
 
 
 // separate helsinki-design-system from the rest and write to own file
-const isHDSMainRepo = (repo)=> repo.full_name.split('/')[1] === 'helsinki-design-system';
+const isHDSMainRepo = (repo) => repo.full_name.split('/')[1] === 'helsinki-design-system';
 const hdsRepoData = reposWithHdsData.find(isHDSMainRepo);
 const clientReposData = reposWithHdsData.filter((repo) => !isHDSMainRepo(repo));
 
@@ -223,3 +245,4 @@ console.log("Results written to files");
 
 console.log('clear temporary directory');
 await fsExtra.emptyDirSync(tempDirectory);
+console.log('temporary directory cleared');
