@@ -9,6 +9,7 @@ If found:
 - Checks the latest commit date
 - Check the listed package-versions
 - Runs the component level analytics
+- Runs deeper analysis going through pre-defined filetypes and searching for usage of `hds-*`
 
 And output them to json files.
 
