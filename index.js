@@ -31,7 +31,7 @@ const tempDirectory = `${currentDir}/tmp`;
 global.GITHUB_TOKEN = args.GITHUB_TOKEN || process.env.GITHUB_TOKEN;
 const githubApiUrl = 'https://api.github.com';
 const now = new Date().toJSON().slice(0, 10);
-const resultsDir = './results';
+const resultsDir = './tmp_results';
 const packageVersionsToCheck = args.PACKAGES || [
     'hds-react',
     'hds-core',
@@ -49,6 +49,11 @@ const packageVersionsToCheck = args.PACKAGES || [
 if (!GITHUB_TOKEN) {
     console.error('GITHUB_TOKEN is missing, please add it to your env or pass it as argument GITHUB_TOKEN=your_token_here');
     process.exit();
+}
+
+// if temp directory doesn't exist, create it
+if (!fs.existsSync(resultsDir)) {
+    fs.mkdirSync(resultsDir);
 }
 
 // if temp directory doesn't exist, create it

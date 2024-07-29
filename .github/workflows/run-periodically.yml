@@ -1,18 +1,52 @@
 name: Run periodically
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [workflow_dispatch]
+run-name: HDS Analytics
+on: 
+  workflow_dispatch:
+    # run on 1st day of every month at 00:00
+  schedule:
+    - cron: '0 0 * * *'
 jobs:
-  Explore-GitHub-Actions:
+  Run-HDS-Analytics:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
+
+      - name: Read .nvmrc
+        run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_OUTPUT
+        id: nvmrc
+
+      - name: setup node ${{ steps.nvmrc.outputs.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: '${{ steps.nvmrc.outputs.NODE_VERSION }}'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: install dependencies
         run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          yarn config set network-timeout 300000 
+          yarn
+
+      - name: run analytics
+        run: |
+          yarn start
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+
+      # copy all files from tmp_results to results (and create results if it doesn't exist)
+      - name: Copy results
+        run: |
+          mkdir -p results
+          cp -r tmp_results/* results
+
+      # commit changes to branch name "results"
+      - name: Commit changes
+        run: |
+          git config --global user.email "hds@hel.fi"
+          git config --global user.name "GitHub Actions"
+          git remote add origin-https "https://github.com/City-of-Helsinki/hds-analytics.git"
+          git fetch --all
+          git checkout origin/results -- results
+          git add results/*
+          git commit -m "Add results"
+          git push --force origin ${{ github.ref_name }}:results
