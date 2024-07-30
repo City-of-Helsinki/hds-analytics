@@ -111,9 +111,14 @@ let page = 1;
 
 while (searchData.items.length < searchData.total_count) {
     console.log('fetching page', page);
-    const fetchData = await fetcher(`${githubApiUrl}/search/code?q=hds-+in:file+filename:package.json+org:${owner}&per_page=100&page=${page}`);
-    const jsonData = await fetchData.json();
-    searchData = { total_count: jsonData.total_count, items: [...searchData.items, ...jsonData.items] };
+    try {
+        const fetchData = await fetcher(`${githubApiUrl}/search/code?q=hds-+in:file+filename:package.json+org:${owner}&per_page=100&page=${page}`);
+        const jsonData = await fetchData.json();
+        searchData = { total_count: jsonData.total_count, items: [...searchData.items, ...jsonData.items] };
+    } catch (error) {
+        console.error('Error fetching data', error);
+        break;
+    }
     page++;
 }
 
