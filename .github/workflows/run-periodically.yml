@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     # run on 1st day of every month at 00:00
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 1 * *'
 jobs:
   Run-HDS-Analytics:
     runs-on: ubuntu-latest

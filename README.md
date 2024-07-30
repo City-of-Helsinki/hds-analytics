@@ -9,7 +9,7 @@ If found:
 - Checks the latest commit date
 - Check the listed package-versions
 - Runs the component level analytics
-- Runs deeper analysis going through pre-defined filetypes and searching for usage of `hds-*`
+- Runs deeper analysis going through pre-defined filetypes and searching for usage of `hds-*` and certain wanted functions and variables `getCriticalHdsRules`, `getCriticalHdsRulesSync` and `hdsStyles`.
 
 And output them to json files.
 
@@ -22,7 +22,9 @@ Only mandatory input needed is `GITHUB_TOKEN` either as env variable named `GITH
 As an example:
 `yarn start PACKAGES=react,vite,gatsby GITHUB_TOKEN=asduihasudhasdh`
 
-After all is run the results are output as 3 separate json files prefixed with date in `./results` folder.
+After all is run the results are output as 3 separate json files prefixed with date in `./tmp_results` folder.
+
+There's also a Github action that is ran periodically (1st day of every month at 00:00) which stores the results in `results` branch under `results` folder (https://github.com/City-of-Helsinki/hds-analytics/tree/results/results).
 
 ## Remark
 This fetches and scans whatever the repos' default branches are set to.
