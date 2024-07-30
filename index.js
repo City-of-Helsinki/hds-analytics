@@ -104,8 +104,18 @@ async function getHdsComponentsList() {
 }
 
 console.log('fetching repos data which contain hds- in package.json');
-const fetchData = await fetcher(`${githubApiUrl}/search/code?q=hds-+in:file+filename:package.json+org:${owner}&per_page=1000&page=1`);
-const searchData = await fetchData.json();
+
+// initialize with total_count 1 to get into the loop
+let searchData = { items: [], total_count: 1 };
+let page = 1;
+
+while (searchData.items.length < searchData.total_count) {
+    console.log('fetching page', page);
+    const fetchData = await fetcher(`${githubApiUrl}/search/code?q=hds-+in:file+filename:package.json+org:${owner}&per_page=100&page=${page}`);
+    const jsonData = await fetchData.json();
+    searchData = { total_count: jsonData.total_count, items: [...searchData.items, ...jsonData.items] };
+    page++;
+}
 
 // remove duplicates from data and also if name is helsinki-design-system or includes hds- (test projects usually)
 const reposWithHdsData = searchData?.items
