@@ -46,7 +46,10 @@ jobs:
           git config --global user.name "GitHub Actions"
           git remote add origin-https "https://github.com/City-of-Helsinki/hds-analytics.git"
           git fetch --all
-          git checkout origin/results -- results
           git add results/*
+          git stash
+          git checkout origin/results
+          git stash pop
           git commit -m "Add results"
-          git push --force origin ${{ github.ref_name }}:results
+          git rebase origin/main
+          git push --force origin HEAD:results
