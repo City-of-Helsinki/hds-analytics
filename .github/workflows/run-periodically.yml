@@ -50,6 +50,6 @@ jobs:
           git stash
           git checkout origin/results
           git stash pop
-          git commit -m "Add results"
+          git commit -m "chore: add results"
           git rebase origin/main
           git push --force origin HEAD:results
