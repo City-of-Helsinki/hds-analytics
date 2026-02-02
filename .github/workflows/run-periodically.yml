@@ -33,23 +33,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
-      # copy all files from tmp_results to results (and create results if it doesn't exist)
-      - name: Copy results
-        run: |
-          mkdir -p results
-          cp -r tmp_results/* results
-
-      # commit changes to branch name "results"
+      # commit changes to branch name "results" (restore old results, add new run's files, push)
       - name: Commit changes
         run: |
           git config --global user.email "hds@hel.fi"
           git config --global user.name "GitHub Actions"
-          git remote add origin-https "https://github.com/City-of-Helsinki/hds-analytics.git"
-          git fetch --all
-          git add results/*
-          git stash
-          git checkout origin/results
-          git stash pop
+          git fetch origin results
+          git checkout origin/results -- results/ || mkdir -p results
+          cp -r tmp_results/* results/
+          git add results/
           git commit -m "chore: add results"
-          git rebase origin/main
           git push --force origin HEAD:results
