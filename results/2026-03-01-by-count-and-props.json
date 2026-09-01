@@ -1,0 +1,2200 @@
+{
+  "Button": {
+    "instances": 1084,
+    "props": {
+      "onClick": 932,
+      "variant": 711,
+      "className": 344,
+      "disabled": 308,
+      "theme": 306,
+      "iconLeft": 190,
+      "iconStart": 188,
+      "size": 186,
+      "type": 139,
+      "data-testid": 119,
+      "iconRight": 73,
+      "style": 44,
+      "iconEnd": 34,
+      "aria-label": 33,
+      "fullWidth": 32,
+      "isLoading": 31,
+      "loadingText": 31,
+      "id": 28,
+      "ref": 28,
+      "key": 23,
+      "role": 17,
+      "aria-expanded": 13,
+      "css": 13,
+      "form": 8,
+      "title": 7,
+      "aria-controls": 4,
+      "aria-disabled": 4,
+      "color": 3,
+      "data-test-id": 3,
+      "tabIndex": 3,
+      "aria-haspopup": 2,
+      "aria-labelledby": 2,
+      "help": 2,
+      "href": 2,
+      "aria-checked": 1,
+      "aria-hidden": 1,
+      "aria-level": 1,
+      "children": 1,
+      "content": 1,
+      "icon": 1,
+      "name": 1,
+      "onKeyDown": 1,
+      "onMouseDown": 1
+    }
+  },
+  "TextInput": {
+    "instances": 338,
+    "props": {
+      "id": 325,
+      "label": 309,
+      "value": 254,
+      "onChange": 244,
+      "invalid": 178,
+      "name": 160,
+      "errorText": 155,
+      "required": 145,
+      "className": 114,
+      "placeholder": 107,
+      "onBlur": 92,
+      "helperText": 74,
+      "aria-invalid": 52,
+      "disabled": 47,
+      "maxLength": 40,
+      "type": 37,
+      "autoComplete": 22,
+      "lang": 21,
+      "style": 18,
+      "aria-required": 16,
+      "readOnly": 16,
+      "tooltipText": 13,
+      "ref": 12,
+      "aria-label": 10,
+      "tooltipLabel": 10,
+      "tooltipButtonLabel": 8,
+      "clearButtonAriaLabel": 6,
+      "data-testid": 6,
+      "hideLabel": 6,
+      "inputMode": 6,
+      "buttonIcon": 5,
+      "crossOrigin": 4,
+      "defaultValue": 4,
+      "onButtonClick": 4,
+      "onFocus": 4,
+      "onKeyDown": 4,
+      "pattern": 4,
+      "enterKeyHint": 3,
+      "error": 3,
+      "fluid": 3,
+      "key": 3,
+      "onPointerEnterCapture": 3,
+      "onPointerLeaveCapture": 3,
+      "successText": 3,
+      "focus": 2,
+      "min": 2,
+      "aria-describedby": 1,
+      "aria-labelledby": 1,
+      "autoFocus": 1,
+      "buttonAriaLabel": 1,
+      "clearButton": 1,
+      "input": 1,
+      "onClick": 1,
+      "onKeyUp": 1
+    }
+  },
+  "Notification": {
+    "instances": 304,
+    "props": {
+      "type": 272,
+      "label": 236,
+      "size": 86,
+      "style": 75,
+      "onClose": 70,
+      "closeButtonLabelText": 69,
+      "dismissible": 67,
+      "className": 66,
+      "position": 59,
+      "autoClose": 29,
+      "autoCloseDuration": 14,
+      "notificationAriaLabel": 11,
+      "data-testid": 10,
+      "key": 6,
+      "displayAutoCloseProgress": 5,
+      "boxShadow": 2,
+      "aria-label": 1,
+      "closeAnimationDuration": 1,
+      "css": 1,
+      "dataTestId": 1,
+      "headingLevel": 1,
+      "id": 1
+    }
+  },
+  "Select": {
+    "instances": 145,
+    "props": {
+      "options": 133,
+      "onChange": 129,
+      "value": 123,
+      "id": 88,
+      "texts": 86,
+      "className": 79,
+      "multiSelect": 41,
+      "theme": 40,
+      "label": 39,
+      "clearable": 38,
+      "noTags": 33,
+      "disabled": 32,
+      "invalid": 32,
+      "required": 29,
+      "placeholder": 28,
+      "onBlur": 18,
+      "style": 16,
+      "error": 12,
+      "filter": 11,
+      "icon": 11,
+      "defaultValue": 9,
+      "visibleOptions": 9,
+      "helper": 8,
+      "name": 8,
+      "onFocus": 8,
+      "clearButtonAriaLabel": 7,
+      "optionLabelField": 7,
+      "selectedItemRemoveButtonAriaLabel": 7,
+      "multiselect": 6,
+      "aria-invalid": 4,
+      "onClose": 3,
+      "aria-required": 2,
+      "children": 2,
+      "data-testid": 2,
+      "ref": 2,
+      "aria-label": 1,
+      "key": 1,
+      "onSearch": 1,
+      "open": 1,
+      "size": 1,
+      "tooltip": 1,
+      "virtualize": 1
+    }
+  },
+  "LoadingSpinner": {
+    "instances": 140,
+    "props": {
+      "small": 71,
+      "className": 24,
+      "loadingText": 15,
+      "loadingFinishedText": 10,
+      "multicolor": 9,
+      "style": 7,
+      "theme": 6,
+      "data-testid": 2,
+      "position": 2,
+      "size": 1,
+      "valuenow": 1
+    }
+  },
+  "Checkbox": {
+    "instances": 131,
+    "props": {
+      "checked": 123,
+      "id": 123,
+      "label": 110,
+      "onChange": 84,
+      "name": 50,
+      "className": 47,
+      "style": 39,
+      "value": 35,
+      "onClick": 20,
+      "disabled": 19,
+      "key": 16,
+      "errorText": 10,
+      "onBlur": 6,
+      "ref": 5,
+      "aria-label": 4,
+      "data-testid": 4,
+      "indeterminate": 4,
+      "readOnly": 4,
+      "required": 4,
+      "error": 3,
+      "title": 2,
+      "aria-required": 1,
+      "helperText": 1,
+      "onKeyDown": 1,
+      "tooltipText": 1,
+      "type": 1,
+      "updated": 1
+    }
+  },
+  "Link": {
+    "instances": 126,
+    "props": {
+      "href": 126,
+      "openInNewTab": 63,
+      "external": 51,
+      "size": 38,
+      "style": 33,
+      "openInNewTabAriaLabel": 30,
+      "openInExternalDomainAriaLabel": 29,
+      "disableVisitedStyles": 25,
+      "onClick": 17,
+      "className": 11,
+      "iconStart": 10,
+      "aria-current": 6,
+      "aria-labelledby": 6,
+      "download": 4,
+      "aria-label": 3,
+      "data-testid": 3,
+      "key": 3,
+      "rel": 3,
+      "useButtonStyles": 3,
+      "data-cookie-consent-groups": 1,
+      "data-hds-component": 1,
+      "data-hds-variant": 1,
+      "iconLeft": 1,
+      "id": 1,
+      "ref": 1
+    }
+  },
+  "Dialog.Content": {
+    "instances": 108,
+    "props": {
+      "className": 4,
+      "id": 4
+    }
+  },
+  "IconCross": {
+    "instances": 106,
+    "props": {
+      "aria-hidden": 29,
+      "size": 11,
+      "className": 8,
+      "onClick": 2,
+      "aria-label": 1,
+      "color": 1
+    }
+  },
+  "RadioButton": {
+    "instances": 97,
+    "props": {
+      "id": 94,
+      "checked": 93,
+      "label": 85,
+      "onChange": 79,
+      "value": 67,
+      "name": 64,
+      "key": 21,
+      "className": 17,
+      "onClick": 13,
+      "style": 13,
+      "disabled": 12,
+      "data-testid": 8,
+      "onBlur": 6,
+      "required": 4,
+      "ref": 3,
+      "error": 1,
+      "readOnly": 1,
+      "title": 1
+    }
+  },
+  "IconArrowRight": {
+    "instances": 94,
+    "props": {
+      "aria-hidden": 25,
+      "size": 14,
+      "className": 7
+    }
+  },
+  "Dialog.Header": {
+    "instances": 93,
+    "props": {
+      "id": 93,
+      "title": 93,
+      "iconStart": 38,
+      "iconLeft": 6,
+      "className": 2
+    }
+  },
+  "Dialog": {
+    "instances": 91,
+    "props": {
+      "aria-labelledby": 91,
+      "isOpen": 91,
+      "id": 81,
+      "close": 59,
+      "closeButtonLabelText": 59,
+      "aria-describedby": 34,
+      "className": 31,
+      "variant": 31,
+      "focusAfterCloseRef": 21,
+      "theme": 12,
+      "scrollable": 6,
+      "targetElement": 6,
+      "boxShadow": 5,
+      "data-testid": 3,
+      "style": 3,
+      "focusAfterCloseElement": 2,
+      "aria-live": 1,
+      "title": 1
+    }
+  },
+  "Dialog.ActionButtons": {
+    "instances": 90,
+    "props": {
+      "className": 4,
+      "style": 1
+    }
+  },
+  "Footer.Link": {
+    "instances": 82,
+    "props": {
+      "label": 78,
+      "href": 67,
+      "target": 41,
+      "as": 28,
+      "to": 15,
+      "icon": 12,
+      "rel": 12,
+      "onClick": 11,
+      "key": 10,
+      "external": 8,
+      "aria-label": 5,
+      "className": 3,
+      "title": 3
+    }
+  },
+  "DateInput": {
+    "instances": 75,
+    "props": {
+      "onChange": 73,
+      "language": 70,
+      "id": 67,
+      "value": 66,
+      "label": 59,
+      "errorText": 46,
+      "invalid": 39,
+      "minDate": 33,
+      "required": 33,
+      "maxDate": 30,
+      "name": 29,
+      "initialMonth": 26,
+      "className": 25,
+      "onBlur": 24,
+      "placeholder": 21,
+      "disableConfirmation": 18,
+      "aria-invalid": 15,
+      "helperText": 15,
+      "crossOrigin": 14,
+      "disabled": 11,
+      "ref": 10,
+      "style": 8,
+      "data-testid": 6,
+      "onPointerEnterCapture": 6,
+      "onPointerLeaveCapture": 6,
+      "openButtonAriaLabel": 6,
+      "isDateDisabledBy": 5,
+      "autoComplete": 4,
+      "aria-label": 3,
+      "disableDatePicker": 3,
+      "readOnly": 3,
+      "defaultValue": 2,
+      "hideLabel": 2,
+      "maxLength": 2,
+      "autoFocus": 1,
+      "css": 1,
+      "error": 1,
+      "type": 1
+    }
+  },
+  "Accordion": {
+    "instances": 73,
+    "props": {
+      "heading": 72,
+      "initiallyOpen": 25,
+      "headingLevel": 24,
+      "language": 23,
+      "className": 22,
+      "size": 14,
+      "theme": 13,
+      "closeButton": 12,
+      "key": 11,
+      "card": 4,
+      "data-testid": 4,
+      "id": 3,
+      "onClick": 1,
+      "style": 1
+    }
+  },
+  "IconPen": {
+    "instances": 70,
+    "props": {
+      "aria-hidden": 35,
+      "aria-label": 1,
+      "color": 1,
+      "size": 1,
+      "style": 1
+    }
+  },
+  "IconPlus": {
+    "instances": 65,
+    "props": {
+      "aria-hidden": 16,
+      "size": 1
+    }
+  },
+  "IconAngleDown": {
+    "instances": 63,
+    "props": {
+      "aria-hidden": 30,
+      "size": 13,
+      "className": 12,
+      "style": 2
+    }
+  },
+  "TextArea": {
+    "instances": 62,
+    "props": {
+      "id": 56,
+      "label": 52,
+      "onChange": 40,
+      "value": 36,
+      "errorText": 28,
+      "invalid": 28,
+      "name": 26,
+      "required": 24,
+      "className": 21,
+      "helperText": 19,
+      "onBlur": 18,
+      "rows": 16,
+      "placeholder": 14,
+      "maxLength": 9,
+      "style": 7,
+      "data-testid": 6,
+      "lang": 6,
+      "aria-invalid": 5,
+      "autoComplete": 5,
+      "disabled": 5,
+      "aria-required": 4,
+      "ref": 4,
+      "hideLabel": 3,
+      "key": 3,
+      "tooltipButtonLabel": 3,
+      "tooltipLabel": 3,
+      "tooltipText": 3,
+      "defaultValue": 2,
+      "onFocus": 2,
+      "readOnly": 2,
+      "autoFocus": 1,
+      "error": 1,
+      "onPointerEnterCapture": 1,
+      "onPointerLeaveCapture": 1
+    }
+  },
+  "IconArrowLeft": {
+    "instances": 60,
+    "props": {
+      "aria-hidden": 15,
+      "className": 6,
+      "size": 4
+    }
+  },
+  "IconInfoCircle": {
+    "instances": 59,
+    "props": {
+      "aria-hidden": 20,
+      "className": 5,
+      "size": 3,
+      "style": 1
+    }
+  },
+  "IconLinkExternal": {
+    "instances": 58,
+    "props": {
+      "aria-hidden": 24,
+      "size": 21,
+      "style": 7,
+      "className": 1
+    }
+  },
+  "SelectionGroup": {
+    "instances": 57,
+    "props": {
+      "label": 49,
+      "direction": 32,
+      "required": 31,
+      "errorText": 27,
+      "id": 21,
+      "className": 16,
+      "tooltipText": 8,
+      "disabled": 4,
+      "aria-required": 3,
+      "aria-invalid": 2,
+      "helperText": 1,
+      "name": 1,
+      "style": 1,
+      "tooltipButtonLabel": 1,
+      "tooltipLabel": 1
+    }
+  },
+  "Fieldset": {
+    "instances": 52,
+    "props": {
+      "heading": 50,
+      "className": 21,
+      "style": 10,
+      "border": 9,
+      "id": 7,
+      "tooltipText": 3,
+      "helperText": 2
+    }
+  },
+  "IconCheck": {
+    "instances": 52,
+    "props": {
+      "aria-hidden": 13,
+      "className": 8,
+      "size": 4,
+      "color": 3
+    }
+  },
+  "Tab": {
+    "instances": 52,
+    "props": {
+      "key": 9,
+      "onClick": 7,
+      "className": 1
+    }
+  },
+  "Tabs.Tab": {
+    "instances": 52,
+    "props": {
+      "onClick": 26,
+      "key": 7
+    }
+  },
+  "IconAngleUp": {
+    "instances": 51,
+    "props": {
+      "aria-hidden": 23,
+      "size": 12,
+      "style": 2,
+      "className": 1,
+      "display": 1,
+      "onClick": 1
+    }
+  },
+  "Tabs.TabPanel": {
+    "instances": 51,
+    "props": {
+      "className": 14,
+      "key": 1,
+      "style": 1
+    }
+  },
+  "IconTrash": {
+    "instances": 49,
+    "props": {
+      "aria-hidden": 8,
+      "color": 3,
+      "size": 3,
+      "aria-label": 1,
+      "className": 1,
+      "style": 1
+    }
+  },
+  "TabPanel": {
+    "instances": 48,
+    "props": {
+      "key": 9,
+      "css": 4,
+      "className": 3
+    }
+  },
+  "Tooltip": {
+    "instances": 47,
+    "props": {
+      "placement": 26,
+      "className": 16,
+      "buttonLabel": 14,
+      "tooltipLabel": 10,
+      "small": 7,
+      "buttonClassName": 3,
+      "style": 3,
+      "boxShadow": 2,
+      "tooltipClassName": 2
+    }
+  },
+  "IconAngleRight": {
+    "instances": 45,
+    "props": {
+      "aria-hidden": 13,
+      "size": 9,
+      "className": 4,
+      "aria-label": 1,
+      "color": 1
+    }
+  },
+  "IconLocation": {
+    "instances": 44,
+    "props": {
+      "aria-hidden": 25,
+      "className": 5,
+      "aria-label": 3,
+      "size": 2,
+      "color": 1,
+      "data-testid": 1
+    }
+  },
+  "Tabs": {
+    "instances": 44,
+    "props": {
+      "initiallyActiveTab": 11,
+      "theme": 3,
+      "key": 2,
+      "small": 2
+    }
+  },
+  "Card": {
+    "instances": 40,
+    "props": {
+      "className": 19,
+      "style": 12,
+      "border": 10,
+      "theme": 6,
+      "data-testid": 5,
+      "aria-label": 4,
+      "heading": 4,
+      "text": 3,
+      "key": 2,
+      "id": 1
+    }
+  },
+  "Container": {
+    "instances": 40,
+    "props": {
+      "className": 29,
+      "style": 7,
+      "alignWithHeader": 3,
+      "role": 1
+    }
+  },
+  "IconSearch": {
+    "instances": 40,
+    "props": {
+      "aria-hidden": 18,
+      "size": 5,
+      "aria-label": 1,
+      "onClick": 1,
+      "tabIndex": 1
+    }
+  },
+  "StatusLabel": {
+    "instances": 39,
+    "props": {
+      "type": 15,
+      "iconStart": 8,
+      "className": 7,
+      "aria-label": 1,
+      "iconLeft": 1
+    }
+  },
+  "Logo": {
+    "instances": 38,
+    "props": {
+      "alt": 37,
+      "src": 37,
+      "size": 26,
+      "className": 1,
+      "color": 1,
+      "data-testid": 1,
+      "language": 1,
+      "style": 1
+    }
+  },
+  "IconAlertCircle": {
+    "instances": 36,
+    "props": {
+      "size": 11,
+      "aria-hidden": 9,
+      "className": 9,
+      "color": 2,
+      "style": 2
+    }
+  },
+  "IconClock": {
+    "instances": 35,
+    "props": {
+      "aria-hidden": 13,
+      "className": 6,
+      "aria-label": 3,
+      "style": 3,
+      "color": 2,
+      "size": 1
+    }
+  },
+  "IconCrossCircle": {
+    "instances": 35,
+    "props": {
+      "aria-hidden": 11,
+      "size": 5,
+      "className": 4,
+      "aria-label": 1
+    }
+  },
+  "Tag": {
+    "instances": 34,
+    "props": {
+      "className": 15,
+      "key": 10,
+      "onDelete": 10,
+      "id": 9,
+      "theme": 9,
+      "aria-label": 6,
+      "iconStart": 5,
+      "onClick": 5,
+      "placeholder": 4,
+      "data-testid": 3,
+      "role": 3,
+      "size": 3,
+      "style": 2,
+      "tabIndex": 2,
+      "aria-describedby": 1,
+      "aria-selected": 1,
+      "deleteButtonAriaLabel": 1
+    }
+  },
+  "IconCheckCircleFill": {
+    "instances": 33,
+    "props": {
+      "color": 14,
+      "aria-hidden": 13,
+      "aria-label": 8,
+      "size": 5,
+      "className": 3,
+      "style": 2
+    }
+  },
+  "IconAlertCircleFill": {
+    "instances": 32,
+    "props": {
+      "color": 14,
+      "size": 6,
+      "className": 5,
+      "aria-hidden": 4,
+      "style": 2
+    }
+  },
+  "IconUser": {
+    "instances": 31,
+    "props": {
+      "aria-hidden": 9,
+      "className": 7,
+      "aria-label": 3,
+      "size": 1
+    }
+  },
+  "IconDownload": {
+    "instances": 30,
+    "props": {
+      "aria-hidden": 4,
+      "size": 2,
+      "style": 2,
+      "className": 1
+    }
+  },
+  "Table": {
+    "instances": 29,
+    "props": {
+      "rows": 29,
+      "cols": 28,
+      "indexKey": 28,
+      "theme": 18,
+      "zebra": 15,
+      "renderIndexCol": 11,
+      "variant": 11,
+      "initialSortingColumnKey": 6,
+      "dense": 5,
+      "initialSortingOrder": 5,
+      "id": 4,
+      "caption": 3,
+      "checkboxSelection": 3,
+      "heading": 3,
+      "selectedRows": 3,
+      "setSelectedRows": 3,
+      "data-testid": 2,
+      "onSort": 2,
+      "aria-live": 1,
+      "ariaLabelSortButtonAscending": 1,
+      "ariaLabelSortButtonDescending": 1,
+      "ariaLabelSortButtonUnset": 1,
+      "verticalLines": 1
+    }
+  },
+  "Koros": {
+    "instances": 28,
+    "props": {
+      "className": 25,
+      "type": 19,
+      "flipHorizontal": 7,
+      "flipVertical": 7,
+      "style": 5,
+      "rotate": 2,
+      "dense": 1
+    }
+  },
+  "Navigation.Item": {
+    "instances": 28,
+    "props": {
+      "label": 28,
+      "onClick": 24,
+      "active": 18,
+      "className": 15,
+      "href": 15,
+      "as": 9,
+      "key": 7,
+      "data-test-id": 6,
+      "type": 5,
+      "icon": 3,
+      "lang": 3,
+      "variant": 3,
+      "tabIndex": 2,
+      "id": 1,
+      "onKeyDown": 1,
+      "target": 1
+    }
+  },
+  "Header.Link": {
+    "instances": 26,
+    "props": {
+      "label": 26,
+      "active": 18,
+      "as": 16,
+      "to": 13,
+      "href": 12,
+      "onClick": 8,
+      "key": 5,
+      "className": 3,
+      "data-testid": 3,
+      "external": 2,
+      "aria-current": 1,
+      "children": 1,
+      "dropdownLinks": 1,
+      "id": 1,
+      "openInExternalDomainAriaLabel": 1,
+      "openInNewTab": 1,
+      "rel": 1,
+      "target": 1,
+      "title": 1
+    }
+  },
+  "SearchInput": {
+    "instances": 26,
+    "props": {
+      "onSubmit": 25,
+      "label": 22,
+      "onChange": 22,
+      "className": 16,
+      "placeholder": 16,
+      "value": 14,
+      "clearButtonAriaLabel": 12,
+      "suggestionLabelField": 12,
+      "getSuggestions": 11,
+      "searchButtonAriaLabel": 11,
+      "hideSearchButton": 9,
+      "helperText": 4,
+      "aria-label": 2,
+      "css": 2,
+      "loadingSpinnerText": 2,
+      "style": 2,
+      "suggestionKeyField": 2,
+      "data-testid": 1,
+      "highlightSuggestions": 1,
+      "id": 1,
+      "visibleSuggestions": 1
+    }
+  },
+  "IconPlusCircle": {
+    "instances": 25,
+    "props": {
+      "aria-hidden": 3,
+      "size": 1
+    }
+  },
+  "Footer.Base": {
+    "instances": 24,
+    "props": {
+      "copyrightHolder": 23,
+      "logo": 21,
+      "backToTopLabel": 17,
+      "copyrightText": 17,
+      "logoHref": 5,
+      "onBackToTopClick": 4,
+      "className": 2
+    }
+  },
+  "Footer": {
+    "instances": 23,
+    "props": {
+      "title": 21,
+      "theme": 14,
+      "className": 13,
+      "korosType": 3,
+      "logoLanguage": 3,
+      "footerProps": 1
+    }
+  },
+  "IconAngleLeft": {
+    "instances": 23,
+    "props": {
+      "aria-hidden": 5,
+      "size": 4,
+      "className": 1
+    }
+  },
+  "IconLock": {
+    "instances": 23,
+    "props": {
+      "aria-hidden": 5,
+      "aria-label": 5,
+      "size": 4,
+      "className": 1
+    }
+  },
+  "TabList": {
+    "instances": 23,
+    "props": {
+      "className": 7,
+      "style": 5
+    }
+  },
+  "IconGroup": {
+    "instances": 22,
+    "props": {
+      "aria-hidden": 7,
+      "aria-label": 2,
+      "size": 2,
+      "style": 1
+    }
+  },
+  "IconSignout": {
+    "instances": 22,
+    "props": {
+      "aria-hidden": 7,
+      "size": 2
+    }
+  },
+  "IconEnvelope": {
+    "instances": 21,
+    "props": {
+      "aria-hidden": 4,
+      "size": 2
+    }
+  },
+  "NumberInput": {
+    "instances": 21,
+    "props": {
+      "id": 17,
+      "label": 17,
+      "onChange": 17,
+      "className": 15,
+      "value": 13,
+      "errorText": 12,
+      "min": 10,
+      "step": 9,
+      "disabled": 8,
+      "onBlur": 8,
+      "required": 8,
+      "crossOrigin": 5,
+      "max": 5,
+      "style": 5,
+      "unit": 5,
+      "helperText": 4,
+      "invalid": 4,
+      "minusStepButtonAriaLabel": 4,
+      "plusStepButtonAriaLabel": 4,
+      "readOnly": 4,
+      "type": 4,
+      "onFocus": 3,
+      "onKeyDown": 3,
+      "onWheel": 3,
+      "ref": 3,
+      "defaultValue": 2,
+      "hideLabel": 2,
+      "name": 2,
+      "onPointerEnterCapture": 2,
+      "onPointerLeaveCapture": 2,
+      "aria-label": 1,
+      "autoComplete": 1,
+      "data-subvention-id": 1,
+      "error": 1,
+      "fluid": 1,
+      "key": 1,
+      "tooltipText": 1
+    }
+  },
+  "SideNavigation.MainLevel": {
+    "instances": 21,
+    "props": {
+      "id": 20,
+      "label": 20,
+      "href": 19,
+      "onClick": 17,
+      "active": 15,
+      "key": 5,
+      "icon": 4,
+      "className": 3,
+      "external": 3,
+      "openInExternalDomainAriaLabel": 3,
+      "openInNewTab": 3,
+      "openInNewTabAriaLabel": 3,
+      "index": 1,
+      "withDivider": 1
+    }
+  },
+  "IconQuestionCircle": {
+    "instances": 20,
+    "props": {
+      "aria-hidden": 10
+    }
+  },
+  "LoginProvider": {
+    "instances": 20,
+    "props": {
+      "modules": 4,
+      "userManagerSettings": 1
+    }
+  },
+  "Header.ActionBarItem": {
+    "instances": 19,
+    "props": {
+      "id": 19,
+      "label": 18,
+      "icon": 16,
+      "fixedRightPosition": 14,
+      "closeLabel": 12,
+      "closeIcon": 10,
+      "onClick": 10,
+      "className": 4,
+      "aria-label": 3,
+      "preventButtonResize": 2,
+      "avatar": 1,
+      "key": 1
+    }
+  },
+  "IconErrorFill": {
+    "instances": 19,
+    "props": {
+      "color": 2,
+      "className": 1,
+      "size": 1
+    }
+  },
+  "IconCogwheel": {
+    "instances": 18,
+    "props": {
+      "aria-hidden": 11,
+      "style": 3
+    }
+  },
+  "Header": {
+    "instances": 17,
+    "props": {
+      "languages": 16,
+      "onDidChangeLanguage": 16,
+      "defaultLanguage": 13,
+      "className": 7,
+      "theme": 4,
+      "id": 3,
+      "key": 3,
+      "style": 2,
+      "title": 2,
+      "lang": 1
+    }
+  },
+  "Header.ActionBar": {
+    "instances": 17,
+    "props": {
+      "frontPageLabel": 17,
+      "logo": 17,
+      "title": 17,
+      "titleHref": 17,
+      "logoHref": 11,
+      "titleAriaLabel": 11,
+      "logoAriaLabel": 9,
+      "menuButtonAriaLabel": 8,
+      "menuButtonLabel": 4,
+      "openFrontPageLinksAriaLabel": 3,
+      "onTitleClick": 2,
+      "className": 1,
+      "onLogoClick": 1,
+      "onMenuClick": 1,
+      "titleStyle": 1
+    }
+  },
+  "IconCheckCircle": {
+    "instances": 17,
+    "props": {
+      "color": 6,
+      "aria-hidden": 3,
+      "aria-label": 3,
+      "className": 1,
+      "style": 1
+    }
+  },
+  "Tabs.TabList": {
+    "instances": 17,
+    "props": {
+      "className": 6,
+      "style": 4
+    }
+  },
+  "Combobox": {
+    "instances": 15,
+    "props": {
+      "multiselect": 15,
+      "options": 15,
+      "onChange": 13,
+      "toggleButtonAriaLabel": 13,
+      "clearButtonAriaLabel": 12,
+      "selectedItemRemoveButtonAriaLabel": 12,
+      "value": 12,
+      "label": 9,
+      "className": 7,
+      "id": 7,
+      "placeholder": 5,
+      "clearable": 4,
+      "disabled": 4,
+      "helper": 4,
+      "onBlur": 4,
+      "aria-label": 2,
+      "error": 2,
+      "filter": 2,
+      "invalid": 2,
+      "aria-required": 1,
+      "defaultValue": 1,
+      "isOptionDisabled": 1,
+      "onFocus": 1,
+      "required": 1,
+      "selectedItemSrLabel": 1
+    }
+  },
+  "IconArrowUndo": {
+    "instances": 15,
+    "props": {
+      "aria-hidden": 3
+    }
+  },
+  "IconDocument": {
+    "instances": 15,
+    "props": {
+      "aria-hidden": 5,
+      "size": 3,
+      "className": 2,
+      "style": 1
+    }
+  },
+  "IconPenLine": {
+    "instances": 15,
+    "props": {
+      "aria-hidden": 6,
+      "style": 3,
+      "size": 2
+    }
+  },
+  "FileInput": {
+    "instances": 14,
+    "props": {
+      "onChange": 14,
+      "id": 13,
+      "label": 13,
+      "accept": 12,
+      "language": 10,
+      "maxSize": 10,
+      "dragAndDrop": 8,
+      "helperText": 6,
+      "multiple": 6,
+      "defaultValue": 5,
+      "errorText": 4,
+      "required": 4,
+      "className": 3,
+      "name": 3,
+      "buttonLabel": 2,
+      "tooltipText": 2,
+      "disabled": 1,
+      "dragAndDropInputLabel": 1,
+      "dragAndDropLabel": 1,
+      "hideLabel": 1,
+      "infoText": 1,
+      "invalid": 1,
+      "minSize": 1,
+      "onBlur": 1,
+      "onFocus": 1,
+      "onTouchEnd": 1
+    }
+  },
+  "LoginCallbackHandler": {
+    "instances": 14,
+    "props": {
+      "onError": 14,
+      "onSuccess": 14
+    }
+  },
+  "Header.LanguageSelector": {
+    "instances": 13,
+    "props": {
+      "aria-label": 3,
+      "ariaLabel": 3,
+      "languageHeading": 1,
+      "sortLanguageOptions": 1
+    }
+  },
+  "Header.NavigationMenu": {
+    "instances": 13,
+    "props": {
+      "aria-label": 1
+    }
+  },
+  "IconCalendar": {
+    "instances": 13,
+    "props": {
+      "aria-hidden": 4,
+      "className": 1,
+      "size": 1,
+      "style": 1
+    }
+  },
+  "IconSignin": {
+    "instances": 13,
+    "props": {
+      "aria-hidden": 4,
+      "size": 2
+    }
+  },
+  "Pagination": {
+    "instances": 13,
+    "props": {
+      "language": 12,
+      "paginationAriaLabel": 12,
+      "onChange": 11,
+      "pageCount": 11,
+      "pageHref": 11,
+      "pageIndex": 11,
+      "siblingCount": 8,
+      "hideNextButton": 2,
+      "hidePrevButton": 2,
+      "className": 1,
+      "data-testid": 1,
+      "theme": 1
+    }
+  },
+  "SideNavigation.SubLevel": {
+    "instances": 12,
+    "props": {
+      "active": 12,
+      "href": 12,
+      "id": 12,
+      "label": 12,
+      "onClick": 12,
+      "className": 1,
+      "key": 1
+    }
+  },
+  "CookieConsentContextProvider": {
+    "instances": 11,
+    "props": {
+      "siteSettings": 4,
+      "onChange": 3,
+      "options": 3
+    }
+  },
+  "Footer.Item": {
+    "instances": 11,
+    "props": {
+      "label": 10,
+      "href": 9,
+      "as": 7,
+      "icon": 4,
+      "onClick": 4,
+      "key": 3,
+      "target": 2,
+      "className": 1
+    }
+  },
+  "Header.SkipLink": {
+    "instances": 11,
+    "props": {
+      "label": 11,
+      "skipTo": 11
+    }
+  },
+  "IconHome": {
+    "instances": 11,
+    "props": {
+      "size": 3,
+      "aria-hidden": 2,
+      "data-testid": 2
+    }
+  },
+  "CookieBanner": {
+    "instances": 10,
+    "props": {}
+  },
+  "IconCalendarClock": {
+    "instances": 10,
+    "props": {
+      "aria-hidden": 10
+    }
+  },
+  "IconEuroSign": {
+    "instances": 10,
+    "props": {
+      "aria-hidden": 4,
+      "aria-label": 4
+    }
+  },
+  "IconEye": {
+    "instances": 10,
+    "props": {
+      "aria-hidden": 7
+    }
+  },
+  "IconTicket": {
+    "instances": 10,
+    "props": {
+      "aria-hidden": 8,
+      "className": 5,
+      "aria-label": 2
+    }
+  },
+  "TimeInput": {
+    "instances": 10,
+    "props": {
+      "id": 10,
+      "onChange": 10,
+      "hoursLabel": 9,
+      "label": 9,
+      "minutesLabel": 9,
+      "value": 9,
+      "invalid": 8,
+      "errorText": 6,
+      "className": 5,
+      "required": 5,
+      "crossOrigin": 4,
+      "name": 4,
+      "disabled": 3,
+      "onBlur": 2,
+      "onPointerEnterCapture": 2,
+      "onPointerLeaveCapture": 2,
+      "ref": 2,
+      "data-testid": 1,
+      "helperText": 1
+    }
+  },
+  "IconArrowDown": {
+    "instances": 9,
+    "props": {
+      "aria-hidden": 3,
+      "className": 2,
+      "size": 1,
+      "style": 1
+    }
+  },
+  "IconCrossCircleFill": {
+    "instances": 9,
+    "props": {
+      "aria-hidden": 6,
+      "color": 3
+    }
+  },
+  "IconInfoCircleFill": {
+    "instances": 9,
+    "props": {
+      "aria-hidden": 2,
+      "color": 1,
+      "style": 1
+    }
+  },
+  "IconPhoto": {
+    "instances": 9,
+    "props": {
+      "size": 5,
+      "aria-hidden": 4,
+      "style": 1
+    }
+  },
+  "IconSaveDiskette": {
+    "instances": 9,
+    "props": {
+      "aria-hidden": 2
+    }
+  },
+  "ToggleButton": {
+    "instances": 9,
+    "props": {
+      "checked": 9,
+      "id": 9,
+      "label": 9,
+      "onChange": 9,
+      "variant": 4,
+      "disabled": 2,
+      "ref": 1,
+      "theme": 1
+    }
+  },
+  "CookieModal": {
+    "instances": 8,
+    "props": {
+      "contentSource": 8,
+      "cookieDomain": 2
+    }
+  },
+  "ErrorSummary": {
+    "instances": 8,
+    "props": {
+      "label": 8,
+      "autofocus": 4,
+      "className": 2,
+      "css": 2,
+      "size": 2
+    }
+  },
+  "Footer.Navigation": {
+    "instances": 8,
+    "props": {
+      "variant": 2,
+      "aria-label": 1,
+      "navigationAriaLabel": 1
+    }
+  },
+  "Footer.Utilities": {
+    "instances": 8,
+    "props": {
+      "backToTopLabel": 1,
+      "soMeLinks": 1
+    }
+  },
+  "Header.ActionBarButton": {
+    "instances": 8,
+    "props": {
+      "label": 8,
+      "onClick": 8,
+      "fixedRightPosition": 5,
+      "icon": 5,
+      "id": 2,
+      "aria-label": 1,
+      "aria-roledescription": 1
+    }
+  },
+  "IconArrowUp": {
+    "instances": 8,
+    "props": {
+      "aria-hidden": 4,
+      "className": 2
+    }
+  },
+  "IconMenuDots": {
+    "instances": 8,
+    "props": {
+      "aria-hidden": 6,
+      "color": 2,
+      "aria-label": 1,
+      "size": 1,
+      "style": 1
+    }
+  },
+  "IconSortDescending": {
+    "instances": 8,
+    "props": {
+      "aria-label": 4,
+      "className": 4,
+      "aria-hidden": 1,
+      "size": 1
+    }
+  },
+  "IconSpeechbubbleText": {
+    "instances": 8,
+    "props": {
+      "aria-hidden": 2,
+      "color": 2
+    }
+  },
+  "Navigation": {
+    "instances": 8,
+    "props": {
+      "menuToggleAriaLabel": 5,
+      "title": 5,
+      "logoLanguage": 4,
+      "skipTo": 4,
+      "skipToContentLabel": 4,
+      "titleAriaLabel": 4,
+      "titleUrl": 4,
+      "className": 3,
+      "label": 3,
+      "theme": 2,
+      "fixed": 1
+    }
+  },
+  "Navigation.Row": {
+    "instances": 8,
+    "props": {
+      "variant": 5
+    }
+  },
+  "Header.ActionBarSubItem": {
+    "instances": 7,
+    "props": {
+      "label": 7,
+      "onClick": 6,
+      "aria-label": 2,
+      "href": 2,
+      "aria-current": 1,
+      "className": 1,
+      "external": 1,
+      "iconRight": 1,
+      "key": 1,
+      "notificationBubbleAriaLabel": 1,
+      "notificationBubbleContent": 1,
+      "openInExternalDomainAriaLabel": 1,
+      "rel": 1,
+      "target": 1
+    }
+  },
+  "IconBell": {
+    "instances": 7,
+    "props": {
+      "aria-hidden": 3,
+      "area-hidden": 1
+    }
+  },
+  "IconMinusCircle": {
+    "instances": 7,
+    "props": {
+      "aria-hidden": 3
+    }
+  },
+  "IconPrinter": {
+    "instances": 7,
+    "props": {}
+  },
+  "IconSortAscending": {
+    "instances": 7,
+    "props": {
+      "aria-label": 4,
+      "className": 4,
+      "aria-hidden": 1,
+      "size": 1
+    }
+  },
+  "IconStar": {
+    "instances": 7,
+    "props": {
+      "aria-hidden": 3,
+      "size": 3,
+      "data-testid": 1
+    }
+  },
+  "Navigation.Actions": {
+    "instances": 7,
+    "props": {}
+  },
+  "Stepper": {
+    "instances": 7,
+    "props": {
+      "onStepClick": 7,
+      "selectedStep": 7,
+      "steps": 7,
+      "language": 6,
+      "css": 3,
+      "stepHeading": 3,
+      "className": 2,
+      "theme": 2,
+      "headingClassName": 1,
+      "small": 1,
+      "stepHeadingAriaLevel": 1
+    }
+  },
+  "WithAuthentication": {
+    "instances": 7,
+    "props": {
+      "AuthorisedComponent": 7,
+      "UnauthorisedComponent": 7
+    }
+  },
+  "CookiePage": {
+    "instances": 6,
+    "props": {
+      "contentSource": 6,
+      "cookieDomain": 2
+    }
+  },
+  "CookieSettingsPage": {
+    "instances": 6,
+    "props": {}
+  },
+  "IconCalendarPlus": {
+    "instances": 6,
+    "props": {
+      "aria-hidden": 4,
+      "key": 1
+    }
+  },
+  "IconCopy": {
+    "instances": 6,
+    "props": {
+      "aria-hidden": 2
+    }
+  },
+  "IconLayers": {
+    "instances": 6,
+    "props": {
+      "aria-hidden": 2,
+      "className": 1,
+      "key": 1
+    }
+  },
+  "IconLink": {
+    "instances": 6,
+    "props": {
+      "aria-hidden": 3,
+      "aria-label": 1
+    }
+  },
+  "IconLockOpen": {
+    "instances": 6,
+    "props": {
+      "size": 1
+    }
+  },
+  "IconMap": {
+    "instances": 6,
+    "props": {
+      "aria-hidden": 3,
+      "className": 2,
+      "style": 1
+    }
+  },
+  "IconPhone": {
+    "instances": 6,
+    "props": {
+      "aria-hidden": 2,
+      "size": 1
+    }
+  },
+  "IconPlusCircleFill": {
+    "instances": 6,
+    "props": {
+      "aria-label": 1,
+      "className": 1
+    }
+  },
+  "IconStarFill": {
+    "instances": 6,
+    "props": {
+      "aria-hidden": 2,
+      "className": 1,
+      "data-testid": 1,
+      "size": 1
+    }
+  },
+  "Linkbox": {
+    "instances": 6,
+    "props": {
+      "href": 6,
+      "linkAriaLabel": 5,
+      "linkboxAriaLabel": 5,
+      "key": 4,
+      "className": 3,
+      "external": 3,
+      "heading": 3,
+      "withBorder": 2,
+      "headingAriaLevel": 1,
+      "imgProps": 1,
+      "onClick": 1,
+      "openInExternalDomainAriaLabel": 1,
+      "openInNewTab": 1,
+      "openInNewTabAriaLabel": 1,
+      "size": 1
+    }
+  },
+  "SessionEndedHandler": {
+    "instances": 6,
+    "props": {
+      "content": 6
+    }
+  },
+  "SideNavigation": {
+    "instances": 6,
+    "props": {
+      "id": 5,
+      "toggleButtonLabel": 5,
+      "className": 3,
+      "defaultOpenMainLevels": 3
+    }
+  },
+  "Header.LoginButton": {
+    "instances": 5,
+    "props": {
+      "errorCloseAriaLabel": 5,
+      "errorLabel": 5,
+      "errorText": 5,
+      "fixedRightPosition": 5,
+      "id": 5,
+      "label": 5,
+      "loggingInText": 5,
+      "redirectWithLanguage": 1,
+      "redirectionProps": 1
+    }
+  },
+  "IconHistory": {
+    "instances": 5,
+    "props": {}
+  },
+  "IconSort": {
+    "instances": 5,
+    "props": {
+      "className": 1
+    }
+  },
+  "IconUpload": {
+    "instances": 5,
+    "props": {
+      "aria-hidden": 3
+    }
+  },
+  "Navigation.User": {
+    "instances": 5,
+    "props": {
+      "authenticated": 4,
+      "label": 4,
+      "onSignIn": 4,
+      "userName": 4,
+      "id": 2,
+      "buttonAriaLabel": 1,
+      "className": 1,
+      "key": 1
+    }
+  },
+  "PhoneInput": {
+    "instances": 5,
+    "props": {
+      "id": 3,
+      "label": 3,
+      "autoComplete": 2,
+      "className": 2,
+      "crossOrigin": 2,
+      "errorText": 2,
+      "invalid": 2,
+      "placeholder": 2,
+      "required": 2,
+      "style": 2,
+      "onChange": 1,
+      "value": 1
+    }
+  },
+  "IconArrowRedo": {
+    "instances": 4,
+    "props": {
+      "aria-hidden": 1
+    }
+  },
+  "IconFaceSmile": {
+    "instances": 4,
+    "props": {}
+  },
+  "IconFacebook": {
+    "instances": 4,
+    "props": {
+      "aria-label": 1
+    }
+  },
+  "IconMinus": {
+    "instances": 4,
+    "props": {
+      "aria-hidden": 2,
+      "className": 1
+    }
+  },
+  "IconPersonWheelchair": {
+    "instances": 4,
+    "props": {
+      "aria-hidden": 3,
+      "size": 2,
+      "color": 1
+    }
+  },
+  "IconPlaybackNext": {
+    "instances": 4,
+    "props": {
+      "aria-hidden": 4
+    }
+  },
+  "Breadcrumb": {
+    "instances": 3,
+    "props": {
+      "aria-label": 3,
+      "list": 2,
+      "theme": 2
+    }
+  },
+  "Footer.GroupHeading": {
+    "instances": 3,
+    "props": {
+      "label": 3,
+      "as": 2,
+      "className": 2,
+      "href": 1,
+      "onClick": 1
+    }
+  },
+  "Header.SimpleLanguageOptions": {
+    "instances": 3,
+    "props": {
+      "languages": 3
+    }
+  },
+  "IconArrowTopRight": {
+    "instances": 3,
+    "props": {}
+  },
+  "IconCake": {
+    "instances": 3,
+    "props": {
+      "aria-hidden": 2
+    }
+  },
+  "IconError": {
+    "instances": 3,
+    "props": {
+      "aria-hidden": 2,
+      "color": 2
+    }
+  },
+  "IconMenuHamburger": {
+    "instances": 3,
+    "props": {
+      "aria-hidden": 3,
+      "style": 1
+    }
+  },
+  "IconPaperclip": {
+    "instances": 3,
+    "props": {
+      "aria-label": 3
+    }
+  },
+  "IconSaveDisketteFill": {
+    "instances": 3,
+    "props": {}
+  },
+  "IconSpeechbubble": {
+    "instances": 3,
+    "props": {
+      "color": 1
+    }
+  },
+  "IconX": {
+    "instances": 3,
+    "props": {
+      "aria-label": 1
+    }
+  },
+  "LoginButton": {
+    "instances": 3,
+    "props": {
+      "errorText": 3,
+      "loggingInText": 3,
+      "redirectionProps": 2,
+      "data-testid": 1,
+      "spinnerColor": 1,
+      "theme": 1,
+      "variant": 1
+    }
+  },
+  "Footer.UtilityGroup": {
+    "instances": 2,
+    "props": {
+      "className": 2,
+      "headingLink": 2
+    }
+  },
+  "Header.LogoutSubmenuButton": {
+    "instances": 2,
+    "props": {
+      "errorCloseAriaLabel": 2,
+      "errorLabel": 2,
+      "errorText": 2,
+      "id": 2,
+      "label": 2,
+      "loggingOutText": 2,
+      "redirectWithLanguage": 1
+    }
+  },
+  "IconArrowBottomRight": {
+    "instances": 2,
+    "props": {}
+  },
+  "IconCalendarCross": {
+    "instances": 2,
+    "props": {
+      "aria-hidden": 2
+    }
+  },
+  "IconCalendarRecurring": {
+    "instances": 2,
+    "props": {}
+  },
+  "IconClockPlus": {
+    "instances": 2,
+    "props": {
+      "aria-hidden": 2,
+      "size": 2
+    }
+  },
+  "IconCogwheels": {
+    "instances": 2,
+    "props": {}
+  },
+  "IconCompany": {
+    "instances": 2,
+    "props": {}
+  },
+  "IconEyeCrossed": {
+    "instances": 2,
+    "props": {
+      "aria-hidden": 1
+    }
+  },
+  "IconGlobe": {
+    "instances": 2,
+    "props": {
+      "aria-hidden": 1
+    }
+  },
+  "IconHeart": {
+    "instances": 2,
+    "props": {
+      "aria-hidden": 1
+    }
+  },
+  "IconInstagram": {
+    "instances": 2,
+    "props": {}
+  },
+  "IconLinkedin": {
+    "instances": 2,
+    "props": {
+      "aria-label": 1
+    }
+  },
+  "IconMinusCircleFill": {
+    "instances": 2,
+    "props": {}
+  },
+  "IconPersonGenderless": {
+    "instances": 2,
+    "props": {}
+  },
+  "IconRefresh": {
+    "instances": 2,
+    "props": {}
+  },
+  "Navigation.LanguageSelector": {
+    "instances": 2,
+    "props": {
+      "buttonAriaLabel": 2,
+      "label": 2
+    }
+  },
+  "RoundedTag": {
+    "instances": 2,
+    "props": {
+      "aria-label": 2,
+      "theme": 2,
+      "key": 1
+    }
+  },
+  "Footer.ItemGroup": {
+    "instances": 1,
+    "props": {
+      "key": 1
+    }
+  },
+  "Footer.NavigationGroup": {
+    "instances": 1,
+    "props": {
+      "headingLink": 1,
+      "key": 1
+    }
+  },
+  "Header.ActionBarSubItemGroup": {
+    "instances": 1,
+    "props": {
+      "label": 1
+    }
+  },
+  "Header.UniversalBar": {
+    "instances": 1,
+    "props": {
+      "primaryLinkHref": 1,
+      "primaryLinkText": 1
+    }
+  },
+  "Header.UserMenuButton": {
+    "instances": 1,
+    "props": {
+      "data-testid": 1,
+      "fixedRightPosition": 1,
+      "id": 1
+    }
+  },
+  "Hero": {
+    "instances": 1,
+    "props": {
+      "centeredContent": 1,
+      "theme": 1,
+      "variant": 1
+    }
+  },
+  "Hero.Text": {
+    "instances": 1,
+    "props": {}
+  },
+  "Hero.Title": {
+    "instances": 1,
+    "props": {
+      "aria-live": 1,
+      "id": 1,
+      "tabIndex": 1
+    }
+  },
+  "IconArrowRightDashed": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconBinoculars": {
+    "instances": 1,
+    "props": {
+      "style": 1
+    }
+  },
+  "IconBox": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconCalendarEvent": {
+    "instances": 1,
+    "props": {
+      "aria-hidden": 1
+    }
+  },
+  "IconDownloadCloud": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconFaceSad": {
+    "instances": 1,
+    "props": {
+      "aria-hidden": 1,
+      "size": 1
+    }
+  },
+  "IconFamily": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconGraphColumns": {
+    "instances": 1,
+    "props": {
+      "style": 1
+    }
+  },
+  "IconKey": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconMoneyBag": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconMover": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconPhotoPlus": {
+    "instances": 1,
+    "props": {
+      "aria-hidden": 1,
+      "size": 1
+    }
+  },
+  "IconQuestionCircleFill": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconRestaurant": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconScrollCogwheel": {
+    "instances": 1,
+    "props": {
+      "style": 1
+    }
+  },
+  "IconSenior": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconSortAlphabeticalAscending": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconSortAlphabeticalDescending": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconTextTool": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconThumbsUp": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconTwitter": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconUploadCloud": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconYouth": {
+    "instances": 1,
+    "props": {}
+  },
+  "IconYoutube": {
+    "instances": 1,
+    "props": {}
+  },
+  "Navigation.Search": {
+    "instances": 1,
+    "props": {
+      "onSearch": 1,
+      "searchLabel": 1,
+      "searchPlaceholder": 1
+    }
+  },
+  "StepByStep": {
+    "instances": 1,
+    "props": {
+      "className": 1,
+      "helpText": 1,
+      "numberedList": 1,
+      "steps": 1,
+      "title": 1
+    }
+  }
+}

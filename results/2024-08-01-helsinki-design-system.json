@@ -1,0 +1,33 @@
+{
+  "full_name": "City-of-Helsinki/helsinki-design-system",
+  "latestCommit": "2024-07-29T09:22:10Z",
+  "packages": {
+    "hds-design-tokens": "3.9.0",
+    "hds-core": "3.9.0",
+    "react": "17.0.2, 18.2.0",
+    "hds-react": "3.9.0",
+    "gatsby": "5.11.0"
+  },
+  "differentComponentsInUse": 0,
+  "nonUsedComponents": [
+    "Columns",
+    "FooterTheme",
+    "FooterCustomTheme",
+    "LanguageOption",
+    "LanguageContext",
+    "LanguageSelectorProps",
+    "HeaderLanguageSelector",
+    "SkipLinkTheme",
+    "TitleStyleType",
+    "LoginButton",
+    "WithAuthenticatedUser",
+    "WithAuthentication",
+    "WithoutAuthenticatedUser",
+    "PasswordInput",
+    "Section",
+    "StepState",
+    "Step",
+    "Hero",
+    "Highlight"
+  ]
+}
